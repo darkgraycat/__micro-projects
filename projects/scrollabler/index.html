@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="./scrollabler.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="header">
+      <button onclick="scale(0.8)"> - </button>
+      <h2>Map of MiddleEarth</h2>
+      <button onclick="scale(1.2)"> + </button>
+    </div>
+
+    <div class="container">
+      <img class="scrollable" src="https://github.com/darkgraycat/__storage/blob/main/images/lotr/map.jpg?raw=true"
+        alt="">
+    </div>
+
+  </div>
+
+  <script>
+    scrollabler(document.querySelector('.scrollable'))
+
+    const scale = by => {
+      const el = document.querySelector('.scrollable')
+      const w = (el.offsetWidth * by) << 0
+      const h = (el.offsetHeight * by) << 0
+      const x = (el.offsetLeft * by) << 0
+      const y = (el.offsetTop * by) << 0
+
+      el.style.width = w + 'px'
+      el.style.height = h + 'px'
+      el.style.left = x + 'px'
+      el.style.top = y + 'px'
+    }
+
+  </script>
+</body>
+
+</html>
